@@ -1,0 +1,31 @@
+{
+  "name": "movie-app",
+  "version": "1.0.0",
+  "description": "Save movies to watch",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "start": "live-server",
+    "build": "rollup -c --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/svvdovkina/movies.git"
+  },
+  "keywords": [
+    "movies"
+  ],
+  "author": "Svetlana Vdovkina",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/svvdovkina/movies/issues"
+  },
+  "homepage": "https://github.com/svvdovkina/movies#readme",
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "^15.0.2",
+    "live-server": "^1.1.0",
+    "rollup": "^3.20.2",
+    "rollup-plugin-import-css": "^3.2.1"
+  }
+}
