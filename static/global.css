@@ -1,0 +1,16 @@
+:root {
+    --black: #121212;
+    --white: #fafafa;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-style: normal;
+    background-color: var(--white);
+    color: var(--black);
+}
+

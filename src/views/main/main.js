@@ -1,5 +1,6 @@
 import { AbstractView } from "../../common/view.js"
 import onChange from 'on-change'
+import { Header } from "../../components/header/header.js";
 
 export class MainView extends AbstractView {
     
@@ -29,5 +30,11 @@ export class MainView extends AbstractView {
         main.innerText = `Favorite movies: ${this.appState.favorites.length}`;
         this.app.innerHTML = '';
         this.app.append(main);
+        this.renderHeader();
+    }
+
+    renderHeader() {
+        const header = new Header(this.appState).render();
+        this.app.prepend(header);
     }
 }

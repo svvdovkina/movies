@@ -1,0 +1,65 @@
+
+#header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    width: 40px;
+}
+
+.menu {
+    display: flex;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+}
+
+.search img {
+    display: block;
+    width: 13px;
+}
+
+.search span {
+    font-weight: 700;
+    font-size: 14px;
+    margin-left: 13px;
+}
+
+.fav-block {
+    display: flex;
+    margin-left: 32px;
+    align-items: center;
+}
+
+.fav-block img {
+    display: inline-block;
+    width: 20px;
+}
+
+.fav-block > span {
+    font-weight: 400;
+    font-size: 14px;
+    padding: 15px;
+}
+
+.fav-num {
+    width: 24px;
+    height: 24px;
+    border: 1px solid var(--black);
+    border-radius: 50%;
+    text-align: center;
+    
+}
+
+.fav-num span {
+    display: inline-block;
+    
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 12px;
+    vertical-align: middle;
+}

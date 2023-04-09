@@ -7,7 +7,7 @@ class App {
     ];
 
     appState = {
-        favorites: []
+        favorites: ['D&D']
     }
 
     constructor() {
