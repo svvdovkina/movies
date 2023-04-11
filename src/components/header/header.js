@@ -9,6 +9,7 @@ export class Header extends DivComponent {
 
     render() {
         this.el.classList.add('header');
+        //console.log(this.appState.favorites);
         this.el.innerHTML = ` 
         <div id="header">
             <div class="logo">
@@ -22,7 +23,7 @@ export class Header extends DivComponent {
                 <a class="fav-block" href="#">
                     <img src="static/fav.svg" alt="favorites" />
                     <span>Favorites</span>
-                    <div class="fav-num"><span>${this.appState.favorites.length}</span></div>
+                    <div class="fav-num"><span>${this.appState.favorites.size}</span></div>
                 </a>
             </div>
         </div>`

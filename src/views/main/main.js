@@ -8,6 +8,7 @@ export class MainView extends AbstractView {
     
     state = {
         list: [],
+        found: 0,
         loading: false,
         searchQuery: undefined,
         page: 0
@@ -34,11 +35,12 @@ export class MainView extends AbstractView {
             const data = await this.loadList(this.state.searchQuery);
             console.log(data.Search);
             this.state.loading = false;
+            this.state.found = data.totalResults;
             this.state.list = data.Search;
-            console.log('load list ',this.state.list, data.Search);
+            //console.log('load list ',this.state.list, data.Search, this.state.found);
         }
         if ( path == 'list') {
-            console.log('loadING ', this.state.loading,this.state.list);
+            //console.log('loadING ', this.state.loading,this.state.list, this.state.found);
             this.render();
         }
         
@@ -54,7 +56,7 @@ export class MainView extends AbstractView {
     render() {
         const main = document.createElement('div');
         main.append(new Search(this.state).render());
-        main.append(new List(this.state).render());
+        main.append(new List(this.state, this.appState).render());
         this.app.innerHTML = '';
         this.app.append(main);
         this.renderHeader();

@@ -7,7 +7,7 @@ class App {
     ];
 
     appState = {
-        favorites: ['D&D']
+        favorites: new Set(['D&D', 'When Harry Met Sally...'])
     }
 
     constructor() {

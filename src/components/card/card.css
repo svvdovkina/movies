@@ -53,3 +53,7 @@
     bottom: 10px;
     left: 10px;
 }
+
+.card-in-fav{
+    background-color: var(--white);
+}
