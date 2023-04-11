@@ -17,7 +17,7 @@ export class List extends DivComponent{
         this.el.classList.add("list");
         //console.log('in list render',this.state.found);
         this.el.innerHTML = `
-        <h3>Search result: ${this.state.found} movies found</h3>
+        <h3> ${this.state.found} movies found</h3>
         <div class="mov-list"></div>
         `;
         //console.log('in list render', JSON.parse(JSON.stringify(this.state.list)));

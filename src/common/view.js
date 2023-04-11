@@ -13,6 +13,6 @@ export class AbstractView {
     }
 
     destroy() {
-        return
+        this.app.innerHTML = '';
     }
 }

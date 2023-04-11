@@ -20,7 +20,7 @@ export class Header extends DivComponent {
                     <img src="static/search.svg" alt="search" />
                     <span>Movies search</span>
                 </a>
-                <a class="fav-block" href="#">
+                <a class="fav-block" href="#fav">
                     <img src="static/fav.svg" alt="favorites" />
                     <span>Favorites</span>
                     <div class="fav-num"><span>${this.appState.favorites.size}</span></div>

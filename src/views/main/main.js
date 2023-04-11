@@ -33,7 +33,7 @@ export class MainView extends AbstractView {
         if (path == 'searchQuery') {
             this.state.loading = true;
             const data = await this.loadList(this.state.searchQuery);
-            console.log(data.Search);
+            //console.log(data.Search);
             this.state.loading = false;
             this.state.found = data.totalResults;
             this.state.list = data.Search;
@@ -47,9 +47,11 @@ export class MainView extends AbstractView {
     }
 
     appStateHook(path) {
-        console.log(path);
+        //console.log(path);
         if (path == 'favorites' ) {
             this.render();
+            localStorage.setItem("favorites", JSON.stringify([...this.appState.favorites]));
+            console.log("LOCAL ST", localStorage.getItem("favorites"))
         }
     }
 
@@ -65,5 +67,11 @@ export class MainView extends AbstractView {
     renderHeader() {
         const header = new Header(this.appState).render();
         this.app.prepend(header);
+    }
+
+    destroy() {
+        //super();
+        onChange.unsubscribe(this.appState);
+        onChange.unsubscribe(this.state);
     }
 }
