@@ -9,7 +9,8 @@ export class FavoritesView extends AbstractView {
         "reload": false,
         "loading": false,
         "list" : [],
-        "found": 0
+        "found": 0,
+        "page": 1
     }
 
     constructor(appState){

@@ -3,3 +3,24 @@
     flex-wrap: wrap;
     gap: 25px;
 }
+
+.prev-next {
+    display: flex;
+    margin-top: 20px;
+    justify-content: space-between;
+}
+
+.prev-next p {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.prev-next button {
+    height: 40px;
+    border-radius: 4px;
+    padding: 10px 35px;
+    cursor: pointer;
+    border: 1px solid var(--black);
+    background-color: var(--white);
+
+}

@@ -20,10 +20,12 @@ export class MainView extends AbstractView {
         this.appState = onChange(this.appState, this.appStateHook.bind(this));
         this.state = onChange(this.state, this.stateHook.bind(this));
         this.setTitle("Movies search");
+        this.state.searchQuery = "Batman";
 
     }
 
     async loadList(title="Batman", page=1) {
+        this.state.page = page;
         const req = await fetch(`https://www.omdbapi.com/?apikey=21647379&s=${title}&page=${page}`);
         return req.json();
         
@@ -33,15 +35,19 @@ export class MainView extends AbstractView {
         if (path == 'searchQuery') {
             this.state.loading = true;
             const data = await this.loadList(this.state.searchQuery);
-            //console.log(data.Search);
             this.state.loading = false;
             this.state.found = data.totalResults;
             this.state.list = data.Search;
-            //console.log('load list ',this.state.list, data.Search, this.state.found);
         }
         if ( path == 'list') {
-            //console.log('loadING ', this.state.loading,this.state.list, this.state.found);
             this.render();
+        }
+
+        if (path == 'page') {
+            this.state.loading = true;
+            const data = await this.loadList(this.state.searchQuery, this.state.page);
+            this.state.loading = false;
+            this.state.list = data.Search;
         }
         
     }
@@ -51,7 +57,7 @@ export class MainView extends AbstractView {
         if (path == 'favorites' ) {
             this.render();
             localStorage.setItem("favorites", JSON.stringify([...this.appState.favorites]));
-            console.log("LOCAL ST", localStorage.getItem("favorites"))
+            //console.log("LOCAL ST", localStorage.getItem("favorites"))
         }
     }
 
