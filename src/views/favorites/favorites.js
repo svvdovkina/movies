@@ -25,8 +25,8 @@ export class FavoritesView extends AbstractView {
     async loadFavorites() {
         const favList = this.appState.favorites;
         let urls = [];
-        favList.forEach((title)=>{
-            urls.push(`http://www.omdbapi.com/?apikey=21647379&t=${title}`);
+        favList.forEach((id)=>{
+            urls.push(`http://www.omdbapi.com/?apikey=21647379&i=${id}`);
         })
         const info = await Promise.all(urls.map(url =>
             fetch(url).then(res => res.json())

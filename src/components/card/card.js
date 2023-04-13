@@ -10,12 +10,12 @@ export class Card extends DivComponent{
     }
 
     handleFavorires() {
-        const title = this.info.Title;
+        const id = this.info.imdbID;
         //console.log('IN HANDLE FAV', title);
-        if (this.appState.favorites.has(title)) {
-            this.appState.favorites.delete(title);
+        if (this.appState.favorites.has(id)) {
+            this.appState.favorites.delete(id);
         } else {
-            this.appState.favorites.add(title);
+            this.appState.favorites.add(id);
         }
     }
 
@@ -24,7 +24,8 @@ export class Card extends DivComponent{
         //console.log(this.info);
         if (!this.info) return this.el;
         const title = this.info.Title;
-        const inFavorites = this.appState.favorites.has(title)
+        const id = this.info.imdbID;
+        const inFavorites = this.appState.favorites.has(id)
         this.el.innerHTML = `
         <img class="card-img" src="${this.info.Poster}" alt="${title} image" />
         <div class="card-descr">
