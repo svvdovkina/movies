@@ -15,7 +15,6 @@ export class FavoritesView extends AbstractView {
     constructor(appState){
         super();
         this.appState = appState;
-        //console.log('HERE');
         this.appState = onChange(this.appState, this.appStateHook.bind(this));
         this.state = onChange(this.state, this.stateHook.bind(this));
         this.setTitle("Favourites");
